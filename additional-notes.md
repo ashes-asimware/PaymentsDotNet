@@ -1,14 +1,23 @@
 
 ## High-level assurance model and friction tolerance
-Assurance levels (proposed):
-Level 0 – Authenticated only: User is logged in via Auth0, no IDV yet. Access to low-risk, non-PHI features only.
-Level 1 – Basic verified: Document captured + automated checks passed (no manual review). Access to most clinical/financial features.
-Level 2 – Strong verified: Document + face match + liveness + higher rule thresholds and/or manual review. Access to all sensitive actions (e.g., high-dollar payments, sensitive notes).
+**Assurance levels (proposed):**
++ Level 0
+    - Authenticated only:
+        * User is logged in via Auth0, no IDV yet. Access to low-risk, non-PHI features only.
++ Level 1
+    - Basic verified:
+        * Document captured + automated checks passed (no manual review). Access to most clinical/financial features.
++ Level 2
+    - Strong verified:
+        * Document + face match + liveness + higher rule thresholds and/or manual review. Access to all sensitive actions
+        (e.g., high-dollar payments, sensitive notes).
 
-Friction tolerance (recommended):
-Initial onboarding: Allow 1–2 minute flow (document capture + selfie + OTP) once per device to reach Level 1.
-
-Elevation to Level 2: Only when user attempts high-risk actions; allow up to ~60 seconds additional friction (extra selfie/liveness or queued manual review with “pending” state and limited access).
+**Friction tolerance (recommended):**
+- Initial onboarding:
+    - Allow 1–2 minute flow (document capture + selfie + OTP) once per device to reach Level 1.
+- Elevation to Level 2:
+    - Only when user attempts high-risk actions; allow up to ~60 seconds additional friction (extra selfie/liveness or queued manual
+      review with “pending” state and limited access).
 
 Core backend services
 Identity verification orchestration service
